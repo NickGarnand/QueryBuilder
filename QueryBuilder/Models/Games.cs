@@ -1,23 +1,26 @@
 ﻿using QueryBuilder.Data;
 using System;
 
-public class Games : IClassModel
+public class BannedGame : IClassModel
 {
     public int Id { get; set; }
     public string Title { get; set; }
-  public string Franchise { get; set; }
-    public string Location { get; set; }
-    public string Reason { get; set; }
+   public string Series { get; set; }
+    public string Country { get; set; }
+    public string Details { get; set; }
 
-    Games() 
+    public BannedGame() 
     {
     }
-    Games(int id, string title, string franchise, string location, string reason  ) 
+    BannedGame(string title, string franchise, string location, string reason  ) 
     {
-        Id = id;
         Title = title;
-        Franchise = franchise;
-        Location = location;
-        Reason = reason;
+        Series = franchise;
+        Country = location;
+        Details = reason;
+    }
+    public override string ToString()
+    {
+        return ($" \n\nTitle: {Title} \n Series: {Series}\n Country: {Country} \n Details: {Details} \n-----------------------------------------------------------------------------");
     }
 }
